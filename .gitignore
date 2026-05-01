@@ -19,3 +19,8 @@ docs/superpowers/
 
 # Per-developer Claude Code preview launch config
 .claude/launch.json
+
+# joeblew999 fork overlay — operator-specific, never commit
+config/*.env
+!config/template.env
+mise.local.toml
