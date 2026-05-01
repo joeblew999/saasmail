@@ -23,7 +23,7 @@
 # Shared joeblew999 task library. v0.8.0 brings:
 #   - cf:provision-d1-r2 (now lenient about partial bindings)
 #   - cf:provision-queues (NEW — for EMAIL_QUEUE)
-includes = ["git::https://github.com/joeblew999/.github.git//mise-tasks?ref=v0.8.1"]
+includes = ["git::https://github.com/joeblew999/.github.git//mise-tasks?ref=v0.8.3"]
 
 [tools]
 node                = "24"
