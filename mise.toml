@@ -23,12 +23,13 @@
 # Shared joeblew999 task library. v0.8.0 brings:
 #   - cf:provision-d1-r2 (now lenient about partial bindings)
 #   - cf:provision-queues (NEW — for EMAIL_QUEUE)
-includes = ["git::https://github.com/joeblew999/.github.git//mise-tasks?ref=v0.9.0"]
+includes = ["git::https://github.com/joeblew999/.github.git//mise-tasks?ref=v0.10.0"]
 
 [tools]
 node                = "24"
 "npm:wrangler"      = "4.84.1"
 "github:jdx/fnox"   = "1.23"
+"github:nushell/nushell" = "0.112"  # required by .github v0.10.0+ (all shared mise-tasks are nu)
 "aqua:cli/cli"      = "2"
 "aqua:jqlang/jq"    = "1"
 "aqua:a8m/envsubst" = "1"
