@@ -36,6 +36,7 @@ experimental = true
 #   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/secrets.toml
 #   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/wrangler.toml
 includes = [
+  "git::https://github.com/joeblew999/.github.git//tasks/ci.toml?ref=v0.18.0",
   "git::https://github.com/joeblew999/.github.git//tasks/cf.toml?ref=v0.18.0",
   "git::https://github.com/joeblew999/.github.git//tasks/env.toml?ref=v0.18.0",
   "git::https://github.com/joeblew999/.github.git//tasks/prove.toml?ref=v0.18.0",
@@ -122,3 +123,15 @@ echo "✓ Pushed VAPID_PRIVATE_KEY to Worker secrets"
 [tasks."prove:all"]
 description = "Run all prove:* checks (deployed + bindings + access-policy + secrets)."
 depends     = ["prove:deployed", "prove:bindings", "prove:access-policy", "prove:secrets"]
+
+# ── check ────────────────────────────────────────────────────────────────────
+# Local lint canary — run before every push.
+#   ci:parse-check           parse-checks any nu files in mise-tasks/
+#   ci:check-toml-tasks      parse-checks inline run bodies in tasks/*.toml
+#   ci:check-workflow-nu     parse-checks embedded nu blocks in .github/workflows/*.yml
+# All three are no-ops in repos lacking those files. Adds <2s
+# overhead, catches nu syntax errors locally instead of in CI.
+[tasks.check]
+description = "Local lint: parse-check every nu file + TOML-task body + workflow nu block"
+depends = ["ci:parse-check", "ci:check-toml-tasks", "ci:check-workflow-nu"]
+run = "echo \"✓ check passed\""
