@@ -30,18 +30,18 @@ experimental = true
 # use them. envsubst dropped — wrangler:gen is now pure nu.
 #
 # Browseable (clicking the `git::` URL will 404):
-#   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/cf.toml
-#   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/env.toml
-#   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/prove.toml
-#   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/secrets.toml
-#   https://github.com/joeblew999/.github/blob/v0.18.0/tasks/wrangler.toml
+#   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/cf.toml
+#   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/env.toml
+#   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/prove.toml
+#   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/secrets.toml
+#   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/wrangler.toml
 includes = [
-  "git::https://github.com/joeblew999/.github.git//tasks/ci.toml?ref=v0.18.0",
-  "git::https://github.com/joeblew999/.github.git//tasks/cf.toml?ref=v0.18.0",
-  "git::https://github.com/joeblew999/.github.git//tasks/env.toml?ref=v0.18.0",
-  "git::https://github.com/joeblew999/.github.git//tasks/prove.toml?ref=v0.18.0",
-  "git::https://github.com/joeblew999/.github.git//tasks/secrets.toml?ref=v0.18.0",
-  "git::https://github.com/joeblew999/.github.git//tasks/wrangler.toml?ref=v0.18.0",
+  "git::https://github.com/joeblew999/.github.git//tasks/ci.toml?ref=v0.19.1",
+  "git::https://github.com/joeblew999/.github.git//tasks/cf.toml?ref=v0.19.1",
+  "git::https://github.com/joeblew999/.github.git//tasks/env.toml?ref=v0.19.1",
+  "git::https://github.com/joeblew999/.github.git//tasks/prove.toml?ref=v0.19.1",
+  "git::https://github.com/joeblew999/.github.git//tasks/secrets.toml?ref=v0.19.1",
+  "git::https://github.com/joeblew999/.github.git//tasks/wrangler.toml?ref=v0.19.1",
 ]
 
 [tools]
