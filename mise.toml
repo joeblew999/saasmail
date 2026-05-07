@@ -20,19 +20,30 @@
 #   9. (manual) Configure Email Routing rule in dashboard
 
 [task_config]
-# Shared joeblew999 task library. v0.8.0 brings:
-#   - cf:provision-d1-r2 (now lenient about partial bindings)
-#   - cf:provision-queues (NEW — for EMAIL_QUEUE)
-includes = ["git::https://github.com/joeblew999/.github.git//mise-tasks?ref=v0.10.0"]
+# Migrated to v0.17.3 TOML-task includes. Per-task tools propagate;
+# consumer no longer pins gh+jq+envsubst just because shared tasks
+# use them. envsubst dropped — wrangler:gen is now pure nu.
+#
+# Browseable (clicking the `git::` URL will 404):
+#   https://github.com/joeblew999/.github/blob/v0.17.3/tasks/cf.toml
+#   https://github.com/joeblew999/.github/blob/v0.17.3/tasks/env.toml
+#   https://github.com/joeblew999/.github/blob/v0.17.3/tasks/prove.toml
+#   https://github.com/joeblew999/.github/blob/v0.17.3/tasks/secrets.toml
+#   https://github.com/joeblew999/.github/blob/v0.17.3/tasks/wrangler.toml
+includes = [
+  "git::https://github.com/joeblew999/.github.git//tasks/cf.toml?ref=v0.17.3",
+  "git::https://github.com/joeblew999/.github.git//tasks/env.toml?ref=v0.17.3",
+  "git::https://github.com/joeblew999/.github.git//tasks/prove.toml?ref=v0.17.3",
+  "git::https://github.com/joeblew999/.github.git//tasks/secrets.toml?ref=v0.17.3",
+  "git::https://github.com/joeblew999/.github.git//tasks/wrangler.toml?ref=v0.17.3",
+]
 
 [tools]
-node                = "24"
-"npm:wrangler"      = "4.84.1"
-"github:jdx/fnox"   = "1.23"
-"github:nushell/nushell" = "0.112"  # required by .github v0.10.0+ (all shared mise-tasks are nu)
-"aqua:cli/cli"      = "2"
-"aqua:jqlang/jq"    = "1"
-"aqua:a8m/envsubst" = "1"
+node                     = "24"
+"npm:wrangler"           = "4.84.1"
+"github:jdx/fnox"        = "1.24"
+"github:nushell/nushell" = "0.112"
+# Shared-lib tasks bring their own gh + jq via per-task `tools = { ... }`.
 "cargo:usage-cli"   = "3"
 
 [env]
