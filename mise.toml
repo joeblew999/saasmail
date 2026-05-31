@@ -36,12 +36,12 @@ experimental = true
 #   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/secrets.toml
 #   https://github.com/joeblew999/.github/blob/v0.19.1/tasks/wrangler.toml
 includes = [
-  "git::https://github.com/joeblew999/.github.git//tasks/ci.toml?ref=v0.19.1",
-  "git::https://github.com/joeblew999/.github.git//tasks/cf.toml?ref=v0.19.1",
-  "git::https://github.com/joeblew999/.github.git//tasks/env.toml?ref=v0.19.1",
-  "git::https://github.com/joeblew999/.github.git//tasks/prove.toml?ref=v0.19.1",
-  "git::https://github.com/joeblew999/.github.git//tasks/secrets.toml?ref=v0.19.1",
-  "git::https://github.com/joeblew999/.github.git//tasks/wrangler.toml?ref=v0.19.1",
+  "git::https://github.com/joeblew999/.github.git//tasks/ci.toml?ref=v0.20.0",
+  "git::https://github.com/joeblew999/.github.git//tasks/cf.toml?ref=v0.20.0",
+  "git::https://github.com/joeblew999/.github.git//tasks/env.toml?ref=v0.20.0",
+  "git::https://github.com/joeblew999/.github.git//tasks/prove.toml?ref=v0.20.0",
+  "git::https://github.com/joeblew999/.github.git//tasks/secrets.toml?ref=v0.20.0",
+  "git::https://github.com/joeblew999/.github.git//tasks/wrangler.toml?ref=v0.20.0",
 ]
 
 [tools]
