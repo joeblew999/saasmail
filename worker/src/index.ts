@@ -28,6 +28,7 @@ import type { SequenceEmailMessage } from "./lib/sequence-processor";
 import { notificationsRouter } from "./routers/notifications-router";
 import { suppressionsRouter } from "./routers/suppressions-router";
 import { unsubscribeRouter } from "./routers/unsubscribe-router";
+import { rauthyInboundRouter } from "./routers/rauthy-inbound-router";
 export { NotificationsHub } from "./do/notifications";
 import type { Variables } from "./variables";
 import type { MiddlewareHandler } from "hono";
@@ -56,6 +57,7 @@ function isUnauthenticatedPath(path: string): boolean {
     path.startsWith("/api/setup") ||
     path.startsWith("/api/invites") ||
     path.startsWith("/api/unsubscribe") ||
+    path.startsWith("/api/rauthy-inbound") ||
     path === "/api/health" ||
     path === "/api/config"
   );
@@ -190,6 +192,8 @@ const requireAdmin: MiddlewareHandler<{
 };
 
 // API Routes
+// Rauthy transactional email, relayed by the smtp2http bridge (own secret guard).
+app.route("/api/rauthy-inbound", rauthyInboundRouter);
 app.route("/api/people", peopleRouter);
 app.route("/api/emails", emailsRouter);
 app.route("/api/conversations", conversationsRouter);
