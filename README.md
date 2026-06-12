@@ -11,6 +11,21 @@
   <a href="https://workers.cloudflare.com/"><img alt="Cloudflare Workers" src="https://img.shields.io/badge/runs%20on-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white" /></a>
 </p>
 
+> ### 🔱 This is the `joeblew999` fork — branching model
+>
+> **`main` is OUR saasmail** (upstream + our overlay: mise/fnox/CI tooling, the
+> Moltis bridge, the Rauthy `/api/rauthy-inbound` handler). It's the default
+> branch and where we work.
+>
+> - **Pull upstream with `git fetch upstream && git merge upstream/main`** — a
+>   **merge**, _never a rebase_. Rebasing replayed our growing overlay on every
+>   sync and kept biting (hence the old `backup/joeblew999-pre-rebase`).
+> - Upstreamable fixes go out as **clean PRs from short branches off
+>   `upstream/main`**, not from `main`.
+> - `upstream/main` is just a remote we merge from; `origin/main` is canonical.
+>
+> Full notes in [CLAUDE.md → Fork model](CLAUDE.md#fork-model--merge-upstream-in-dont-rebase).
+
 **The centralized inbox for SaaS teams.** One unified timeline per customer — marketing, notifications, and support emails collapsed into a single view, per person.
 
 Every interaction with a customer matters, and context compounds. saasmail pulls the promo blast, the billing receipt, and the support thread into the same conversation, so anyone on your team can respond with the full history already in hand.
