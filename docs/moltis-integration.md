@@ -1,6 +1,6 @@
 # saasmail ↔ Moltis integration
 
-**Status:** design (no code yet) · **Branch:** `joeblew999` · **Date:** 2026-06-05
+**Status:** design (no code yet) · **Branch:** `main` · **Date:** 2026-06-05
 
 This document captures the verified architecture for bridging **saasmail** (the
 unified inbox on Cloudflare Workers) with **Moltis** (a self-hosted Rust AI-agent
@@ -171,7 +171,7 @@ headers   = { Authorization = "Bearer ${SAASMAIL_API_KEY}" }
 
 ## 7. Build order
 
-1. **`POST /api/inbound`** on the `joeblew999` branch (ideally upstreamed as the
+1. **`POST /api/inbound`** on the `main` branch (ideally upstreamed as the
    issue #111 PR). Unblocks everything. _(keystone)_
 2. **saasmail MCP route** (`/mcp`, streamable-http) exposing at minimum an
    `ingest` tool → `/api/inbound`, plus `send` / `templates` as useful agent tools.
@@ -183,7 +183,7 @@ headers   = { Authorization = "Bearer ${SAASMAIL_API_KEY}" }
 
 ## 8. Status snapshot (2026-06-05)
 
-- saasmail `joeblew999`: rebased onto upstream **v0.6.0**, builds clean
+- saasmail `main`: merges upstream **v0.6.0**, builds clean
   (`tsc` + `vite build`). Overlay intact. Not yet pushed to origin.
 - Moltis deploy: **ready** via `vm-uncloud` `recipes/moltis`.
 - Bridge: **unbuilt**. `/api/inbound` (issue #111) is the first task.
